@@ -1,28 +1,3 @@
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
-}
-body {
-  font-family: 'Open Sans'!important;
-  font-weight: 700!important;
-  background: rgba(0, 0, 0, 0)!important;
-  margin: 0px auto;
-  overflow: hidden;
-}
-.backstretch {
-visibility: hidden;
-}
-#chat {
-background: rgba(0, 0, 0, 0)!important;
-}
-.username {
-color: #F3F781!important;
-}
-#player-controller {
-  background: rgba(0, 0, 0, 0)!important;
-}
-#player-controller ul li.infoContainer .progressBg {
-  visibility: hidden;
+.mod {
+  color: blue!important;
 }
