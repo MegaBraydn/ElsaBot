@@ -4,7 +4,7 @@ function startSpamDialouge() {
     if (confirm("Taste the Rainbow?") === true) {
       var myVar;
       function myFunction() {
-        myVar = setInterval(spam, 3000);
+        myVar = setInterval(spam, 300);
       }
       myFunction();
     } 
