@@ -1,12 +1,26 @@
-$('#chat-txt-message').val(':heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart:');
-Dubtrack.room.chat.sendMessage();
-$('#chat-txt-message').val(':yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart:');
-Dubtrack.room.chat.sendMessage();
-$('#chat-txt-message').val(':green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart:');
-Dubtrack.room.chat.sendMessage();
-$('#chat-txt-message').val(':blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart:');
-Dubtrack.room.chat.sendMessage();
-$('#chat-txt-message').val(':purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart:');
-Dubtrack.room.chat.sendMessage();
+var heartNo = [":heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart:", ":yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart:", ":green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart:", ":blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart:", ":purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart:"];
+function () {
+    if (confirm("Taste the Rainbow?")) {
+      var i = 0;
+      var myVar;
+      function myFunction() {
+      myVar = setInterval(spam, 3000);
+      }
+      function spam() {
+        if (i < 5) {
+          $('#chat-txt-message').val(heartNo[i]);
+          Dubtrack.room.chat.sendMessage();
+          i++
+        }
+        else {
+          i = 0;
+        }
+      }
+    } 
+    else {
+      alert("test2");
+    }
+}
+
 
 
