@@ -9,7 +9,7 @@ function startSpamDialouge() {
       myFunction();
     } 
     else {
-      alert("test2");
+      alert("good work");
     }
 }
 function spam() {
