@@ -1,5 +1,5 @@
 var heartNo = [":heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart:", ":yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart:", ":green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart:", ":blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart:", ":purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart: :heart: :yellow_heart: :green_heart: :blue_heart:"];
-function () {
+function startSpamDialouge() {
     if (confirm("Taste the Rainbow?")) {
       var i = 0;
       var myVar;
@@ -21,6 +21,7 @@ function () {
       alert("test2");
     }
 }
+startSpamDialouge();
 
 
 
