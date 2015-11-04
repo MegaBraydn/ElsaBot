@@ -6,6 +6,8 @@ function startSpamDialouge() {
         function myFunction() {
             myVar = setInterval(spam, 300);
         }
+        $('#chat-txt-message').val("http://40.media.tumblr.com/PFO2xF03Amxr6pp8vQCxGHero1_500.jpg");
+        Dubtrack.room.chat.sendMessage();
         myFunction();
     } 
     else {
