@@ -13,13 +13,15 @@ function startSpamDialouge() {
     }
 }
 function spam() {
-    if (i < 5) {
+    if (i < 4) {
         $('#chat-txt-message').val(heartNo[i]);
         Dubtrack.room.chat.sendMessage();
         i++
     }
     else {
-         i = 0;
+        $('#chat-txt-message').val(heartNo[i]);
+        Dubtrack.room.chat.sendMessage();
+        i = 0;
     }
 }
 startSpamDialouge();
