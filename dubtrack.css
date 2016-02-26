@@ -1,52 +1,205 @@
-#main-room .left_section{
-    width:calc(100% - 28rem);
+/*
+Enjoy Dubtrack in full screen!.
+
+Features:
+- chat to the right
+- video player without padding filling the space left
+- queue buttons below video on the page footer
+
+Imports:
+- NB3 vote icons
+- recognizable room BOTs in chat
+- a pack of animations
+- an improvement on the lobby, the browser and the room edit room
+- netux's fixes (including mobile view)
+- Heebee's Rainbow progress bar.
+*/
+
+/* Imports */
+@import url("https://netox005.github.io/Dubtrack/css/chatright.css"); /* Chat completly to the right */
+@import url("https://netox005.github.io/Dubtrack/css/animations.css"); /* Pack of animations */
+@import url("https://netox005.github.io/Dubtrack/css/skynet.css"); /* Better recognizable Room BOTs */
+@import url("https://netox005.github.io/Dubtrack/css/browserbetter.css"); /* Modified Browser */
+@import url("https://netox005.github.io/Dubtrack/css/lobbybetter.css"); /* Modified Lobby */
+@import url("https://netox005.github.io/Dubtrack/css/roomformbetter.css"); /* Modified Room Form */
+@import url("https://netox005.github.io/Dubtrack/css/fixesnetux.css"); /* Netux Fixes */
+
+/* Main function */
+#main-room .main-room-wrapper { min-height: initial; }
+#main-room .left_section {
+    padding: 0 33.33% 0 0 !important;
+    margin: 0 !important;
+}
+#main-room .left_section .main-player-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0,0,0,.7);
+    padding: 3.1rem 0 3.56rem;
+}
+#main_player {
     padding: 0;
+    border-radius: 0;
+    height: inherit;
+    background-color: rgba(0,0,0,0);
+    border-top: 1px solid #878c8e;
 }
-#main-room .right_section{
-    width: 28rem;
-    border-radius:0;
+#main_player #mods-controllers,
+#main_player #room-info-display,
+#main_player .player_container {
+    padding: 0;
+    height: inherit;
 }
- 
-#main-room{
-    max-width: 100%;
-    padding: 3.5rem 0;
+#main_player #mods-controllers,
+#main_player #room-info-display .room-info-display-wrapper {
+    padding: 0 1rem;
 }
-#main-section{
-    overflow-y:hidden;
+#main_player #mods-controllers,
+#mods-controllers .mods-controllers-main-wrapper {
+    position: relative;
 }
-#main_player{
-    padding:0;
+#main_player #mods-controllers { padding-right: 0; }
+#main_player .player_header {
+    top: -3rem;
+    height: 2.95rem;
+    display: flex;
 }
-#main_player .player_header{
-    top: auto;
-    bottom: 0;
-    z-index: 6;
-}
-#main_player .player_header span{
-    border-radius:0;
-    height: 37px;
+#main_player .player_header span {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    border-radius: 0;
     margin: 0;
+    padding: 1rem 0;
+    color: #878c8e;
+    opacity: 1;
+    background-color: rgba(0,0,0,0) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-#main_player .player_header span.display-mods-controls, #main_player .player_header span.edit-room{
-    padding-bottom: calc((37px + 1rem - 32px) / 2);
-    padding-top: calc((37px + 1rem - 32px) / 2);
+#main_player .player_header span:hover,
+#main_player .player_header span.active {
+    color: #fff;
 }
-#main_player .player_sharing{
-    margin: 0;
+#main_player .player_header span.active { border-bottom: 2px solid #fff; }
+#main_player .player_header span.edit-room i {
+    position: initial;
+    line-height: .4;
+}
+#main_player .player_header span.skip-el,
+#main_player .player_header span.skip-el:hover {
+    color: #f00;
+    width: 25%;
+}
+#main_player .player_sharing {
     position: absolute;
+    width: 100%;
+    height: 3.55rem;
+    padding: 1rem 1rem 0;
+    margin: 0;
+    border-top: 1px solid #878C8E;
+}
+
+@media screen and (max-width: 72em) { .diplay-chat #main_player > *:not(.play-song-link-container) { display: none; } }
+@media screen and (min-width: 72em) { #main-room .right_section { width: 33.33% !important; } }
+@media screen and (min-width: 48em) {
+    #main-menu-right { width: 33.33% !important; }
+    #main-menu-right { right: calc(-33.33% - 2rem); }
+    .menu-right-in #main-menu-right { transform: translateX(calc(-100% - 2rem)); }
+}
+
+/* Play song links on right footer */
+#player-controller { z-index: 0 !important; }
+#main_player .play-song-link-container {
+    position: fixed;
+    left: initial;
+    right: 33.33%;
     bottom: 0;
+    transform: none;
     z-index: 5;
-    background-color:#fff;
-    opacity: .8;
-    right: calc(61px + 1rem);
-    padding-bottom: calc((37px - 30px) / 2);
-    padding-top: calc((37px - 30px) / 2);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    width: 16.66%;
+    display: flex !important;
 }
-#main_player .player_sharing *{
-    color: #000;
+.not-logged-in #main_player .play-song-link-container { width: 25%; right: 25%; }
+#main_player .play-song-link-container .play-song-link,
+#main_player .play-song-link-container .play-song-link-browser {
+    width: 50%;
+    display: inline-block;
+    overflow: hidden;
+    height: 3.6rem;
+    border-radius: 0;
+    background-color: rgba(0,0,0,0);
+    padding: 1rem 0;
+    transform: translateY(100%);
 }
-#main_player .play-song-link{
-    display: none;
+#main_player .play-song-link-container .play-song-link-browser { margin: 0; }
+#main_player .play-song-link-container .play-song-link::before,
+#main_player .play-song-link-container .play-song-link-browser::before {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#main_player .play-song-link-container .play-song-link:hover::before,
+#main_player .play-song-link-container .play-song-link-browser:hover::before {
+    color: #0ff;
+}
+#main_player .play-song-link-container .play-song-link::before { content: "Join Queue"; }
+#main_player .play-song-link-container .play-song-link.leave-button::before { content: "Leave Queue"; }
+#main_player .play-song-link-container .play-song-link-browser::before { content: "Open Queue"; }
+
+#player-controller .left, .not-logged-in #player-controller .left { width: 50%; padding-right: 0; }
+#player-controller .right { width: 50%; }
+#player-controller .right ul {
+    width: 66.66%;
+    float: right;
+}
+.not-logged-in #player-controller .right ul { width: 50%; }
+
+@media screen and (max-width: 72em) {
+    #main-room .left_section { padding-right: 0 !important; min-height: initial; background-color: rgba(0,0,0,.7); }
+    #player-controller .left, .not-logged-in #player-controller .left { width: 100%; }
+    #main_player .play-song-link-container { right: initial; left: 0; }
+    #player-controller .right { width: 100%; }
+    #main_player .play-song-link-container { width: 33.33%; }
+    .not-logged-in #main_player .play-song-link-container { width: 50%; }
+}
+
+/* ETA (DubX) fix */
+.eta_tooltip {
+    border-top-right-radius: 1.5rem !important;
+    transform: translate(calc(100% + 2.5rem), -100%);
+}
+.eta_tooltip::before {
+    left: -17px;
+    bottom: calc(50% - 11px);
+    transform: rotate(-90deg);
+}
+
+/* Soundcloud artwork fix */
+#main_player .player_container #room-main-player-container .playerElement.soundcloud > div {
+    position: relative !important;
+    width: auto !important;
+    height: 90% !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+}
+#main_player .player_container #room-main-player-container .playerElement.soundcloud .artwork {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#main_player .player_container #room-main-player-container .playerElement.soundcloud .artwork[src="https://d3byct92ei5n7c.cloudfront.net/hhberclba/image/upload/c_fill,h_460,w_900/tiqxlzynh3rxrkwvzeak.jpg"] {
+    width: 50%;
+    height: auto;
 }
