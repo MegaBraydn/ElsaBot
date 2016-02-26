@@ -33,7 +33,7 @@ Imports:
 }
 
 #player-controller .left ul li.infoContainer .infoContainerInner .progressBg {
-    background: red;
+    background: lightseagreen;
 }
 #main_player .player_header span.active {
     color white !important;
